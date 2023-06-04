@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 16px" class="u-responsive-xs">
+  <head>
+    <meta
+      charset="Utf-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <link
+      id="u-theme-google-font"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+     <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://kit.fontawesome.com/e25a05fa1c.css"
+      crossorigin="anonymous"
+    />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pabalelo's Dream Travel Destination</title>
+    <style>
+      :root {
+        --primary-color: #6b8e23;
+        --secondary-color: #f5f2fe;
+        --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        --background: linear-gradient(
+          179.1deg,
+          rgb(247, 238, 238) -1.9%,
+          rgb(247, 202, 201) 44.9%,
+          rgb(145, 168, 208) 96.1%
+        );
+      }
+      html,
+      body {
+        font-family: "Roboto", "Arial", "sans-serif";
+        height: 100%;
+        display: block;
+        color: #333;
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-size-adjust: 100%;
+        background: var(--background);
+       
+      }
+      body {
+        margin: 60px auto;
+        max-width: 800px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        text-align: center;
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 70px;
+        font-weight: bold;
+  font-family: "Dancing Script", cursive;
+  
+      }
+
+      h2 {
+        font-size: 35px;
+      }
+
+      h3 {
+        font-size: 24px;
+        opacity: 0.7;
+      }
+
+      p {
+        background: var(--secondary-color);
+        padding: 20px;
+        border-radius: 4px;
+        font-size: 18px;
+        line-height: 1.5;
+        text-align: center;
+      }
+
+
+
+@keyframes fade {
+
+0% {
+
+opacity: 0;
+
+}
+
+100% {
+
+opacity: 1;
+
+}
+
+}
+
+* {
+
+padding: 0;
+
+border: 0;
+
+box-sizing: border-box;
+
+}
+
+body {
+
+height: 100%;
+
+}
+
+body h1 {
+
+text-align: center;
+
+}
+
+.slide-container {
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+max-width: 1000px;
+
+margin: auto;
+
+position: relative;
+
+}
+
+.slide-container .slide {
+
+display: none;
+
+width: 100%;
+
+}
+
+.slide-container .slide.fade {
+
+animation: fade 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+
+}
+
+.slide-container .slide img {
+
+width: 100%;
+
+}
+
+
+
+.slide-container .prev,
+
+.slide-container .next {
+
+cursor: pointer;
+
+position: absolute;
+
+top: 50%;
+
+width: auto;
+
+margin-top: -22px;
+
+padding: 16px;
+
+color: white;
+
+font-weight: bold;
+
+font-size: 20px;
+
+transition: all 0.6s ease;
+
+border-radius: 0 3px 3px 0;
+
+user-select: none;
+
+}
+
+.slide-container .prev:hover,
+
+.slide-container .next:hover {
+
+background-color: rgba(0, 0, 0, 0.8);
+
+color: white;
+
+}
+
+.slide-container .prev {
+
+left: 2px;
+
+}
+
+.slide-container .next {
+
+right: 2px;
+
+}
+
+.dots-container {
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+padding: 10px;
+
+}
+
+.dots-container .dot {
+
+cursor: pointer;
+
+margin: 5px;
+
+width: 20px;
+
+height: 20px;
+
+color: #333;
+
+border-radius: 50%;
+
+background-color: #dfd6ce;
+
+}
+
+.dots-container .dot.active {
+
+border: 2px solid green;
+
+}
+
+
+
+
+
+
+
+
+
+      .navigation-links {
+        display: flex;
+        margin-top: 40px;
+        justify-content: center;
+      }
+
+      .navigation-links a {
+        margin: 20px;
+        border-radius: 4px;
+        padding: 20px 15px;
+        text-decoration: none;
+        text-transform: capitalize;
+      }
+
+      .contact-link {
+        background: var(--primary-color);
+        box-shadow: var(--box-shadow);
+        color: white;
+      }
+
+      .about-link {
+        color: var(--primary-color);
+        border: 1px solid var(--primary-color);
+      }
+
+      .homepage-link {
+        color: var(--primary-color);
+        text-align: center;
+        display: block;
+      }
+
+      .about-paragraphs {
+        display: flex;
+        margin: 30px 0;
+      }
+
+      .about-paragraphs p {
+        margin: 10px;
+      }
+
+      .email-link {
+        display: flex;
+        justify-content: center;
+        color: var(--primary-color);
+        font-size: 20px;
+        text-decoration: none;
+      }
+
+      .email-link:hover {
+        text-decoration: underline;
+      }
+
+      .primary-link {
+        border-radius: 4px;
+        padding: 20px 15px;
+        text-decoration: none;
+        text-transform: capitalize;
+        background: var(--primary-color);
+        box-shadow: var(--box-shadow);
+        color: white;
+      }
+      .button {
+        display: inline-block;
+        padding: 6px 10px;
+        color: #cafaea;
+        border: 1px solid #cafaea;
+        border-radius: 3px;
+        font-weight: 700;
+        line-height: normal;
+        text-decoration: none;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .mobile-image {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+      }
+       .last {
+        text-align: center;
+        font-size: 11px;
+         font-size: 18px;
+        opacity: 0.7;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a
+          class="navbar-brand badge text-bg-info text-wrap p-2 mt-2 fs-5 text"
+          href="#"
+          >P.T~Travel.com</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Travel</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Prices</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link badge bg-secondary text-wrap p-2 mt-2"
+                href="travel-page.html#contact"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <h1 mt-5>🙏🏽Welcome to Dream travel, let's go to Hawaii</h1>
+
+    <h3 class="mt-5 pt-2 pb-3">
+      <em
+        >Make your tour with us for amazing adventures and let your imagination
+        be your guide...</em
+      >
+    </h3>
+
+<iframe width="800" height="400" src="https://www.youtube.com/embed/wXl1V5di-Xc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+   
+
+    <div class="container">
+      <div class="row mt-4 ">
+        <div class="col-sm-5">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/081/955/original/lanai.jpeg?1684091294"
+            class="img-fluid rounded pt-5"
+          />
+        </div>
+        <div class="col-sm-7">
+          <h2 class="mb-3">Lanai</h2>
+          <p>
+This little island, also known as Pineapple Island due to its fruit plantations, also isn’t very heavily populated, so it feels like a well-kept secret. The air of exclusivity has attracted the likes of Will Smith, Cindy Crawford, and other celebrities who love this little gem of an island.
+
+If it sounds like your cup of tea, you’re in luck: Lanai is easily accessible from Maui, so you can stop here while island hopping. Or if you really love it, you can choose from Lanai’s luxurious resorts, which also boast some of the best golfing around.          </p>
+          <div class="mt-5">
+            <a href="#" class="primary-link">See More..</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-sm-7">
+          <h2 class="mb-3">Hawaii</h2>
+          <p>
+            The “Big Island” is a very popular destination thanks to unparalleled snorkeling, incredible beaches, and compelling history. This island offers some of the archipelago’s best scenery and wildly different climates, and it is also famously home to Hawaii’s only volcano. Lots of world class resorts can be found on Big Island, making it a truly dreamy option.
+          </p>
+          <div class="mt-5 mb-5">
+            <a href="#" class="primary-link">See More...</a>
+          </div>
+        </div>
+        <div class="col-sm-5">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/078/894/original/pexels-photo-12421272.jpeg?1682509937"
+            class="img-fluid rounded mt-5 pt-2"
+          />
+        </div>
+
+        <div class="row mt-6">
+          <div class="col-sm-5">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/081/958/original/Maui.jpeg?1684091316"
+              class="img-fluid rounded pt-5 "
+            />
+          </div>
+          <div class="col-sm-7">
+            <h2>Maui</h2>
+            <p>
+              If you’re the active type and there is no such thing as a “beach vacation” for you, make sure to check out Maui, Hawaii’s adventure island. Not that you won’t find some breathtaking beaches here — in fact, you’ll be stunned to see anything from black to red to white sandy beaches.  But there is so much more to do: You can explore Haleakalā National Park, or trek to the top of the volcano Haleakalā and spend a few hours mountain biking down.
+            </p>
+            <div class="mt-5 mb-5">
+              <a href="#" class="primary-link">See More..</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="pt-5 text-center" id="about-us">What We Love About Hawaii</h1>
+
+    <h3 class="text-center">View the slides below for more</h3>
+    <div class="text-center about-paragraphs">
+      <p>
+       So now you know your way around Hawaii’s islands. But why exactly should you choose it as your next vacation destination? We all know about the volcanoes, pristine beaches, turquoise waters, towering cliffs and waterfalls, incredibly rich wildlife, and breathtaking panoramas…we could go on and on. But there’s one thing that really makes Hawaii unique: its famously friendly people and vibrant culture, expressed through singing, dancing, art, and of course hula-hooping!
+
+      </p>
+    </div>
+
+
+
+
+    
+
+   
+ <div class="slide-container">
+ <div class="slide fade">
+ <img src='https://www.theknot.com/tk-media/images/97ec36a0-d2b3-47dd-9dd2-d6ed6860366c~rs_768.h' alt='landscape'>
+ </div>
+ <div class="slide fade">
+ <img src='https://s3.amazonaws.com/shecodesio-production/uploads/files/000/081/982/original/HIPP_Fruit_Platter_2021.jpg?1684096417' alt='platter'>
+ </div>
+ <div class="slide fade">
+ <img src='https://images.unsplash.com/photo-1589808710416-24cf7ac026f2?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ' alt='rocks'>
+ </div>
+ <div class="slide fade">
+ <img src='https://www.theknot.com/tk-media/images/32989e3c-1b96-499c-9d09-f2db272aecbb~rs_768.h' alt='suite'>
+ </div>
+
+ <a href="#" class="prev" title="Previous"> &#10094 </a>
+ <a href="#" class="next" title="Next"> &#10095 </a>
+ </div>
+ <div class="dots-container">
+ <span class="dot"></span>
+ <span class="dot"></span>
+ <span class="dot"></span>
+ <span class="dot"></span>
+ </div>
+
+<h1 class="pt-5 mt-5 text-center" id="about-us">About Us</h1>
+
+    <h3 class="text-center">P.T~Travel.com</h3>
+    <div class="text-center about-paragraphs">
+      <p>
+       
+
+“Travel is the main thing you purchase that makes you more extravagant”. We, at P.T~Travel.com, swear by this and put stock in satisfying travel dreams that make you perpetually rich constantly.
+
+We have been moving excellent encounters for a considerable length of time through our cutting-edge planned occasion bundles and other fundamental travel administrations. We rouse our clients to carry on with a rich life, brimming with extraordinary travel encounters.
+
+Through our exceptionally curated occasion bundles, we need to take you on an adventure where you personally enjoy the stunning magnificence of America and far-off terrains. We need you to observe sensational scenes that are a long way past your creative ability.
+      </p>
+    </div>
+
+    <h2 class="mt-5 pt-5">Get Help Centre support</h2>
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-sm-6">
+          <img
+            src="https://business.booking.com/storage/assets/media/32/ctm-customer-service-v1_ad8ac7fe5ee91a3f7e2510a7d8f746cccf3bfc68.webp"
+            alt="Get Help Centre support"
+            class="w-100"
+          />
+        </div>
+        <div class="col-sm-6">
+          <p>
+            Reach a member of the P.T~Travel.com booking team for help with
+            your account, managing a booking or handling invoices. Gain access
+            to useful info about reservations and bookings.
+            <strong>Help Centre</strong>.
+          </p>
+          <p>
+            Plus, get assistance around the clock from the
+            <strong>P.T~Travel.com customer service</strong> team, available via
+            chat, email or telephone and in 45 different languages.
+          </p>
+          <a
+            class="bui-button sign_up_button"
+            href="https://business.booking.com/sign-up/?aid=819224;label=business-branding-enukiede-Pdqk9NSgJ8qBNrRwUIs_kgS513123604062:pl:ta:p1:p2:ac:ap:neg:fi:tikwd-10267951:lp9076784:li:dec:dm:ppccp=UmFuZG9tSVYkc2RlIyh9YYzu_e_JczYpCNors2-x4YU;ws=&amp;gad=1&amp;gclid=EAIaIQobChMI4O_L7vbs_gIVXQgGAB0DOgyJEAMYASAAEgIGT_D_BwE"
+            target="_self"
+          >
+          </a>
+          <div class="mt-5">
+            <span class="bui-button__text sign_up_button primary-link">
+              Sign up now
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="contact">
+      <h2 class="mt-5">📮 Contact Us</h2>
+
+<div class="container text-center mt-2 pb-4">
+  <div class="row">
+    <div class="col">
+     <a href="mailto:pabalelotsebempe@gmail.com" class="email-link">
+       📩E-mail: pabalelotsebempe@gmail.com
+      </a>
+    </div>
+    <div class="col">
+     📞Contact Us: +267 76976244
+    </div><p class="last"> © Copyright,Pabalelo Tsebempe</p>
+</div>
+
+
+   
+ 
+      
+    
+    
+  </body>
+</html>
